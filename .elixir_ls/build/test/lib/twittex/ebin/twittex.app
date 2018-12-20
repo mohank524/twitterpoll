@@ -1,0 +1,11 @@
+{application,twittex,
+             [{applications,[kernel,stdlib,elixir,logger,gen_stage,poolboy,
+                             poison,httpoison,oauth2,oauther]},
+              {description,"Twitter client library for Elixir"},
+              {modules,['Elixir.Twittex','Elixir.Twittex.API',
+                        'Elixir.Twittex.Application','Elixir.Twittex.Client',
+                        'Elixir.Twittex.Client.Base',
+                        'Elixir.Twittex.Client.Stream']},
+              {registered,[]},
+              {vsn,"0.3.6"},
+              {mod,{'Elixir.Twittex.Application',[]}}]}.

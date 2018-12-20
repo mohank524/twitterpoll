@@ -1,0 +1,32 @@
+<h1>Listing Tweets</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Retweet count</th>
+      <th>Created at</th>
+      <th>Name</th>
+      <th>Text</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for tweet <- @tweets do %>
+    <tr>
+      <td><%= tweet.retweet_count %></td>
+      <td><%= tweet.created_at %></td>
+      <td><%= tweet.name %></td>
+      <td><%= tweet.text %></td>
+
+      <td>
+        <%= link "Show", to: Routes.tweet_path(@conn, :show, tweet) %>
+        <%= link "Edit", to: Routes.tweet_path(@conn, :edit, tweet) %>
+        <%= link "Delete", to: Routes.tweet_path(@conn, :delete, tweet), method: :delete, data: [confirm: "Are you sure?"] %>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<span><%= link "New Tweet", to: Routes.tweet_path(@conn, :new) %></span>

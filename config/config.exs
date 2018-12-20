@@ -1,0 +1,34 @@
+# This file is responsible for configuring your application
+# and its dependencies with the aid of the Mix.Config module.
+#
+# This configuration file is loaded before any dependency and
+# is restricted to this project.
+
+# General application configuration
+use Mix.Config
+
+config :twitter_poll,
+  ecto_repos: [TwitterPoll.Repo]
+
+# Configures the endpoint
+config :twitter_poll, TwitterPollWeb.Endpoint,
+  url: [host: "localhost"],
+  secret_key_base: "Bue5TBJpalQ/XPWDuEIBrOo3gRidfePfqtQNuTSa/S1JeG40XcdDkcmJi4pX3Bp+",
+  render_errors: [view: TwitterPollWeb.ErrorView, accepts: ~w(html json)],
+  pubsub: [name: TwitterPoll.PubSub, adapter: Phoenix.PubSub.PG2]
+
+# Configures Elixir's Logger
+config :logger, :console,
+  format: "$time $metadata[$level] $message\n",
+  metadata: [:request_id]
+
+# Use Jason for JSON parsing in Phoenix
+config :phoenix, :json_library, Jason
+
+# Import environment specific config. This must remain at the bottom
+# of this file so it overrides the configuration defined above.
+import_config "#{Mix.env()}.exs"
+config :twittex,
+  consumer_key: "5s2Vv6LwAl4LO8jkvfwEmvyBv",
+  consumer_secret: "vyPE7dpKofKVW6w2QMr7PNnbt0lbRCWLAbnvqV8BHdTcx3KZel",
+  lists: ["@himanshgoyal194","@mohan28510157"]
