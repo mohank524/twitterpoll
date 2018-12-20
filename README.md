@@ -10,3 +10,7 @@ To start your Phoenix server:
   * Start Phoenix endpoint with ` iex -S mix phx.server`
   * ` iex> TwitterPollWeb.PageController.input_list()`
 
+For database
+  * ` sudo -u postgres psql postgres`
+  * ` \c twitter_poll_dev`
+  * ` select * from tweets;`
